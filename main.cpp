@@ -3,24 +3,25 @@ int menuglowne;
 
 std::string numer;
 
- 
+ class nowykontakt
+{
+  public:
+  std::string imie;
+  std::string nazwisko;
+  int telnr;
+
+
+  
+};
+
    void menu(){
     std::cout << "1.Połączenia" << std::endl;
  std::cout << "2.Kontakty" << std::endl;
  std::cout << "3.SMS" << std::endl;
  
    }
-  
-
-
- void run(){
-    
-    menu();
-    std::cin >> menuglowne;
-
-     switch(menuglowne){
-    case 1: // wybieranie numeru
-    system( "cls" );
+  void wybieranienumeru(){
+     system( "cls" );
     std::cout << "wprowadz numer, wciśnij dwa aby wrócić do menu" << std::endl;  
     //std::string numer;
 
@@ -59,10 +60,17 @@ std::string numer;
       
   
     }
-     
-    }
-    
+  }
+  }
 
+ void run(){
+    
+    menu();
+    std::cin >> menuglowne;
+
+     switch(menuglowne){
+    case 1: // wybieranie numeru
+   wybieranienumeru();
     break;
 
     case 2: // wybieranie sms
@@ -70,7 +78,7 @@ std::string numer;
     std::cout << "wprowadz numer" << std::endl;  
     break;
 
-    case 3: // ksiażka telefoniczna 
+    case 3: //t ksiażka telefoniczna 
     system( "cls" );
     std::cout << "wprowadz numer" << std::endl;  
     break;
@@ -78,7 +86,12 @@ std::string numer;
  }
 int main (){
     
-run();
+//run();
+nowykontakt kontakt1;
+kontakt1.imie = "tomasz";
+kontakt1.nazwisko= "morawa";
+kontakt1.telnr = 123456789;
+
 
  return 0;
  } 
